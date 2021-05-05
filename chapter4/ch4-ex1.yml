@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: complex-pod
+spec:
+  containers:
+  - name: app
+    image: nginx
+    ports:
+    - containerPort: 80
+  # These containers are run during pod initialization
+  initContainers:
+  - name: setup
+    image: busybox
+    command:
+    - wget
+    - "-O-"
+    - google.com
+
+
