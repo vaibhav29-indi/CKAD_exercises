@@ -1,0 +1,51 @@
+Name:         nginx
+Namespace:    ckad
+Priority:     0
+Node:         3bc41d653b1c.mylabserver.com/172.31.116.29
+Start Time:   Wed, 05 May 2021 14:34:38 +0000
+Labels:       <none>
+Annotations:  cni.projectcalico.org/podIP: 192.168.76.195/32
+              cni.projectcalico.org/podIPs: 192.168.76.195/32
+Status:       Running
+IP:           192.168.76.195
+IPs:
+  IP:  192.168.76.195
+Containers:
+  nginx:
+    Container ID:   docker://49d740182f17193c50628bcd4c32c81895de1442c8c8cedb1c70998c2318f41a
+    Image:          nginx:1.17.10
+    Image ID:       docker-pullable://nginx@sha256:6fff55753e3b34e36e24e37039ee9eae1fe38a6420d8ae16ef37c92d1eb26699
+    Port:           80/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Wed, 05 May 2021 14:34:48 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-m4vzb (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-m4vzb:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  2m40s  default-scheduler  Successfully assigned ckad/nginx to 3bc41d653b1c.mylabserver.com
+  Normal  Pulling    2m39s  kubelet            Pulling image "nginx:1.17.10"
+  Normal  Pulled     2m31s  kubelet            Successfully pulled image "nginx:1.17.10" in 8.126987733s
+  Normal  Created    2m31s  kubelet            Created container nginx
+  Normal  Started    2m30s  kubelet            Started container nginx
