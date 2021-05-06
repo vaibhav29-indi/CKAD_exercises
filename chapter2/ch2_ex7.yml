@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: loop
+  name: loop-222
 spec:
   containers:
   - name: loop
     image: busybox
-    command:
-    - for i in {1..10};
-    - do echo "Welcome $i times";
-    - done
+    command: ["/bin/sh"]
+    args: ["-c", "for i in $(seq 1 10); do echo Welcome \"$i\" times; done"]
+  restartPolicy: Never
+
